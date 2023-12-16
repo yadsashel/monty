@@ -1,21 +1,20 @@
-#include "monty.h"
-/**
- * f_pall - prints the stack
- * @head: stack head
- * @counter: no used
- * Return: no return
-*/
-void f_pall(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
-	(void)counter;
+#include "monty.h"  /* Include the provided header file */
 
-	h = *head;
-	if (h == NULL)
-		return;
-	while (h)
+/**
+ * f_pall - Implementation of the pall opcode
+ * @head: Pointer to the top of the stack
+ * @number: Unused parameter (provided for function signature compatibility)
+ *
+ * Description: Prints all the values on the stack
+ */
+void f_pall(stack_t **head, unsigned int number)
+{
+	stack_t *current = *head;
+
+	while (current != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", current->n);  /* Assuming stack elements are integers */
+		current = current->next;
 	}
 }
+
